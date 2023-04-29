@@ -12,7 +12,7 @@ const NewInput = ({onClick, onChange, text, value, type, placeholder}) => {
   else if (type === 'textarea') {
     return (
       <div>
-        <textarea value={value} onChange={onChange} className={classes.input} placeholder={placeholder}></textarea>
+        <textarea rows="8" cols="40" value={value} onChange={onChange} className={classes.area} placeholder={placeholder}></textarea>
       </div>
     )
   }

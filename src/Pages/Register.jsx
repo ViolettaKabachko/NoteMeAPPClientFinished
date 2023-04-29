@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import NewInput from '../Components/UI/NewInput/NewInput'
-import Navbar from '../Components/UI/Navbar/Navbar'
 import { sendData } from '../fetch'
 
 const Register = () => {
@@ -12,7 +11,6 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar/>
             <div>
                 <NewInput placeholder="Nick name" type="text" value={nick} onChange={e => {setNick(e.target.value)}}/>
                 <NewInput placeholder="Email" type="text" value={email} onChange={e => {setEmail(e.target.value)}}/>

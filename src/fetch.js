@@ -53,14 +53,12 @@ export const refreshToken = async () => {
         }
     }
     let res = await fetch('http://127.0.0.1:5000/refresh', opts)
-    let a = await res.json()
-    alert(a)
     if (res.status === 200) {
         let res_json = await res.json()
         storeTokens(res_json.access_token, res_json.refresh_token)
     }
     else {
         localStorage.clear()
-        window.location.href = '/login'
+        redirect('/login')
     }
 }
