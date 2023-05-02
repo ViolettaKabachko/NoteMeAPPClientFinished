@@ -8,6 +8,10 @@ const LogIn = () => {
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
+    if (localStorage.getItem("access_token")) {
+        redirect('/users_page')
+    }
+
     return (
         <div>
             <form>

@@ -6,12 +6,12 @@ const PostView = ({content, date}) => {
   return (
     <div className={classes.post_view}>
         <div>
-            {content}
+            <p>{content}</p>
         </div>
         <div>
-            {date}
+            <p>{date}</p>
         </div>
-        <NewInput type="button" value="Delete" onClick={() => {}}/>
+        <NewInput type="button" text="Delete" onClick={() => {}}/>
     </div>
   )
 }

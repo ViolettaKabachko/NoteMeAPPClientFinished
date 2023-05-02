@@ -1,0 +1,8 @@
+.post_view {
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(2, 119, 135);
+    margin: 10px;
+    white-space: pre-wrap;
+    border-radius: 10px;
+}

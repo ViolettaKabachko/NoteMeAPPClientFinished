@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Components/UI/Navbar/Navbar'
 import NewInput from '../Components/UI/NewInput/NewInput'
 import { redirect } from '../fetch'
 
@@ -12,7 +11,6 @@ const LandingPage = () => {
     else {
       return (
         <div>
-          <Navbar/>
           <div>
             
           </div>

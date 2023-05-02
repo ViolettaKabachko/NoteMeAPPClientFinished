@@ -2,3 +2,22 @@ p {
     margin: 10px;
     font-size: 25px;
 }
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.posts, .user_info {
+    width: 45%;
+}
+
+.ava {
+    width: 300px;
+    height: 300px;
+}
+
+.ava > img {
+    width: 100%;
+}
