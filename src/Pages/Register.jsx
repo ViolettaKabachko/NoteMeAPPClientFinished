@@ -22,11 +22,14 @@ const Register = () => {
                     email,
                     password,
                     age}, 'register')
-                    setAge(""); setEmail(""); setNick(""); setPassword(""); setMessage(res.msg)
+                    setAge(""); setEmail(""); setNick(""); setPassword(""); setMessage(res.data.msg)
                     }}/>
             </div>
             <div>               
                 <h3 style={{margin: 10}}>{message}</h3>
+            </div>
+            <div>
+                <a style={{marginLeft: "10px", color: "#3dcc91"}} href='/'>Retrun to login</a>
             </div>
         </div>
     )

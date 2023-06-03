@@ -14,6 +14,9 @@ const Navbar = () => {
                 <div>
                     <a href="/users_page">Your page</a>
                 </div>
+                <div>
+                    <a href="/settings">Settings</a>
+                </div>
             </div>
         </div>
     )

@@ -19,6 +19,7 @@ const UserInfo = () => {
         if (result.status === 200) {
           setNick(result.data[1])
           setEmail(result.data[3])
+          localStorage.setItem("current_nick", result.data[1])
           if (result.data[4]) {
             setAva(result.data[4])
           }
@@ -56,10 +57,15 @@ const UserInfo = () => {
 
                 <div>
                   <NewInput value={post} onChange={(e) => setPost(e.target.value)} placeholder="New post" type='textarea'/>
-                  <NewInput onClick={async () => {
-                    let res = await sendData('http://127.0.0.1:5000/upload_post', {text: post}, '')
-                    if (res.status === 200) {setPost(""); getPosts()} 
-                    setMsg(res.data.msg)
+                  <NewInput onClick={async (e) => {
+                    if (post.trim().length < 10) {
+                      alert('Zbyt krótki post, napisz coś jeszcze...')
+                    }
+                    else {
+                      let res = await sendData('http://127.0.0.1:5000/upload_post', {text: post}, '')
+                      if (res.status === 200) {setPost(""); getPosts()} 
+                      setMsg(res.data.msg)
+                    }
                   }
                     } 
                     text="Publish" type='button'/>
@@ -69,7 +75,7 @@ const UserInfo = () => {
               </div>
           </div>
         <div className={classes.posts}>
-          {posts.map(post => <PostView content={post[1]} date={post[3]} key={post[0]}/>)}
+          {posts ? posts.map(post => <PostView content={post[1]} date={post[3]} key={posts.indexOf(post)} idKey={post[0]}/>): []}
         </div>
         </div>
         

@@ -45,6 +45,25 @@ export const sendData = async (url, data, type) => {
     return {data: res, status: response.status}
 }
 
+export const updateAvatar = async (url, data) => {
+    const opts = {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS, UPDATE, DELETE"
+        },
+        body: data
+    }
+    const response = await fetch(url, opts)
+    let res = await response.json()
+    if (response.status !== 200) {
+        refreshToken()
+    }
+    return {data: res, status: response.status}
+}
+
 export const refreshToken = async () => {
     const opts = {
         credentials: "include",

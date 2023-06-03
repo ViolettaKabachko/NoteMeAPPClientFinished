@@ -1,11 +1,18 @@
 import React from 'react'
 import classes from './NewInput.module.css'
 
-const NewInput = ({onClick, onChange, text, value, type, placeholder}) => {
+const NewInput = ({onClick, onChange, text, value, type, placeholder, accept}) => {
   if (type === "button") {
     return (
       <div>
-          <input value={text} type={type} className={classes.button} onClick={onClick}></input>
+          <input value={text} type="button" className={classes.button} onClick={onClick}></input>
+      </div>
+    )
+  }
+  else if (type === "delete_button") {
+    return (
+      <div>
+          <input value={text} type="button" className={classes.delete_button} onClick={onClick}></input>
       </div>
     )
   }
@@ -16,9 +23,10 @@ const NewInput = ({onClick, onChange, text, value, type, placeholder}) => {
       </div>
     )
   }
+  
   return (
     <div>
-        <input placeholder={placeholder} value={value} type={type} className={classes.input} onChange={onChange}></input>
+        <input placeholder={placeholder} value={value} type={type} className={classes.input} accept={accept} onChange={onChange}></input>
     </div>
   )
 }
